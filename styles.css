@@ -1,0 +1,305 @@
+:root{
+    /* COLORS */
+    --primary-color: #0B0C7F;
+    --secondary-color: #1C6357;
+    --accent-color: #E7F1DA;
+
+    /* FONTS */
+    --times: 'Times New Roman', Times, serif;
+    --lato: 'Lato', sans-serif;
+}
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px;
+    background: #FFFDFA;
+    height: 80px;
+}
+
+body{
+    width: 100%;
+}
+
+h1,h2,h3,h4,h5,h6{
+    font-family: var(--times);
+    font-weight: 700;
+    color: var(--primary-color)
+}
+
+h2{
+    font-size: 1.6rem;
+}
+
+p{
+    font-weight: 400;
+    color: var(--primary-color)
+}
+
+/* Burger Menu */
+.burger-menu{
+    display: flex;
+    flex-direction: column;
+}
+.bar {
+    width: 25px;
+    border-bottom: 2px solid black;
+    margin: 3px;
+    color: var(--primary-color)
+}
+
+.logo-container{
+    display: flex;
+    align-items: center;
+}
+.logo-text{
+    margin-left: 10px;
+}
+
+.logo-title{
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.logo{
+    margin: 0;
+    background: blue;
+    width: 64px;
+    height: 64px;
+}
+
+
+/* HERO SECTION */
+
+.hero{
+    height: 600px;
+    background: url(./assets/hero-mobile.webp) no-repeat;
+    background-size: cover;
+    background-position: center bottom;
+
+}
+
+.hero__text{
+    padding: 30px;
+}
+
+.hero__text h2 {
+    margin: 3px 0px;
+    width: 150px;
+    line-height: 2.3rem;
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+.hero__text p {
+    margin-top: 20px;
+    font-size: 1.2rem;
+    letter-spacing: 0.5px;
+
+}
+
+/* MAIL FORM SECTION */
+
+.mail{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.mail h2 {
+    margin: 30px 0px 10px 0px;
+    font-weight: 200;
+    color: var(--secondary-color);
+    font-family: var(--lato);
+    width: 230px;
+    text-align: center;
+}
+
+/* SUBSCRIPTION FORM  */
+#subs-form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    font-family: var(--lato);
+    font-weight: 300;
+    color: var(--secondary-color);
+}
+
+.input-container{
+    display: flex;
+    flex-direction: column;
+    padding: 20px 20px;
+}
+
+.input-container label{
+    margin-bottom: 10px;
+}
+
+
+#subs-form input{
+    width: 100%;
+    padding: 20px;
+    border: 1px solid var(--secondary-color);
+}
+
+.btn{
+    background: var(--secondary-color);
+    color: white;
+    padding: 10px 60px;
+    border: none;
+    font-size: 1.2rem;
+    font-weight: 300;
+    cursor: pointer;
+}
+
+.btn-subs{
+    margin-top: 10px;
+    padding: 20px 80px;
+}
+
+/* Social ICONS */
+
+.social-icons-section{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 50px 0px;
+}
+
+/* Deco SVG */
+
+.deco-svg{
+    display:flex;
+    justify-content: center;
+}
+
+/* RECENT POSTS SECTION*/
+
+.recent-posts{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.recent-posts h2 {
+    margin: 20px 0px;
+    font-size: 1.8rem;
+    font-weight: 300;
+}
+
+.recent-posts p {
+    width: 230px;
+    text-align: center;
+}
+
+/* POSTS SECTION */
+
+.new-post-btn{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 40px 0px;
+    font-family: var(--lato);
+    cursor: pointer;
+}
+
+.new-post-btn p {
+    color:white;
+}
+
+#blog{
+    /* background: lightblue; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 100px;
+}
+
+.post{
+    margin: 30px 30px;
+    border: solid 1px lightgray;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+}
+
+.post img {
+    width: 100%;
+    object-fit: cover;
+}
+
+.post-text-content{
+    /* background: red; */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 90%;
+}
+
+.post-title{
+    font-size: 1.6rem;
+    font-weight: 300;
+}
+
+.post-text{
+    font-family: var(--lato);
+    font-weight: 300;
+}
+
+
+/* POST ICONS */
+.post-icons{
+    display:flex;
+    justify-content: space-between;
+    margin: 10px 0px;
+}
+
+.fa-comment{
+    margin-left: 30px;
+}
+
+
+/* POST FORM INPUT STYLING  */
+
+.post-form-container{
+    background: var(--accent-color);
+    padding: 30px 30px;
+    border-radius: 12px;
+}
+
+
+#new-post-form input{
+    width: 100%;
+    padding: 20px;
+    margin: 10px 0px;
+    border: 1px solid var(--secondary-color);
+}
+
+#new-post-form label{
+    margin-bottom: 10px;
+    font-family: var(--lato);
+    color:var(--secondary-color)
+}
+
+#new-post-form button {
+    width: 100%;
+}
+
+
+
+
+
+
+

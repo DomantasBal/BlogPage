@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles.css" />
+
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- FONT AWESOME -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    />
+
+    <script defer src="./app.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="logo-container">
+        <img src="" alt="" class="logo" />
+        <div class="logo-text">
+          <h1 class="logo-title">Breathe</h1>
+          <p class="slogan">My mindfulness blog</p>
+        </div>
+      </div>
+
+      <div class="burger-menu">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero__text">
+          <h2>Open Your Mind to Mindfulness</h2>
+          <p>The blog of here and now</p>
+        </div>
+      </section>
+
+      <section class="mail">
+        <h2>Mind your mailbox for the new posts</h2>
+
+        <form id="subs-form" action="">
+          <div class="input-container">
+            <label for="email">Email <sup>*</sup></label>
+            <input type="email" name="" id="email" />
+            <button type="submit" class="btn btn-subs">Subscribe</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="social-icons-section">
+        <i class="fa-brands fa-facebook-f"></i>
+        <i class="fa-brands fa-twitter"></i>
+        <i class="fa-brands fa-instagram"></i>
+      </section>
+      <div class="deco-svg">
+        <img src="#" alt="SVG" />
+      </div>
+
+      <section class="recent-posts">
+        <h2>Recent Posts</h2>
+        <p>Mindfulness, Meditation and Everything in Between</p>
+      </section>
+
+      <section id="blog">
+        <!-- New Post Button -->
+        <div class="btn new-post-btn">
+          <i class="fa-solid fa-pen"></i>
+          <p>New Post</p>
+        </div>
+
+        <!-- NEW POST FORM -->
+        <div class="post-form-container">
+          <form id="new-post-form" action="">
+            <div>
+              <label for="post-title">Post title: </label>
+              <input type="text" id="post-title" />
+            </div>
+            <div>
+              <label for="post-title">Post text: </label>
+              <input type="text" id="post-text" />
+            </div>
+            <div>
+              <label for="post-title">Post Image Url: </label>
+              <input type="text" id="post-img" />
+            </div>
+            <button id="submit-new-post" class="btn" type="submit">
+              Make New Post
+            </button>
+          </form>
+        </div>
+
+        <!-- NEW POST FORM END -->
+
+        <!-- SINGLE POST TEMPLATE -->
+        <div class="post">
+          <img src="./assets/post.webp" alt="" />
+          <div class="post-text-content">
+            <h3 class="post-title">App & Down: 5 Apps to Help You Meditate</h3>
+            <p class="post-text">
+              Create a blog post subtitle that sumarizes your post in a few
+            </p>
+            <hr />
+            <div class="post-icons">
+              <div class="left-icons">
+                <i class="fa-regular fa-eye"></i>
+                <i class="fa-regular fa-comment"></i>
+              </div>
+              <div class="right-icons"><i class="fa-regular fa-heart"></i></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SINGLE POST TEMPLATE END -->
+        <button class="btn btn-primary">More Posts</button>
+      </section>
+    </main>
+  </body>
+</html>
