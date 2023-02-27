@@ -1,14 +1,14 @@
 
-// getPosts();
+getPosts();
 
-// function getPosts (){
-//     fetch("	https://testapi.io/api/Domantas/resource/Posts")
-//     .then(res => res.json())
-//     .then(data => {
-//         console.log(data);
-//     })
-//     .catch(err => console.log(err))
-// }
+function getPosts (){
+    fetch("	https://testapi.io/api/Domantas/resource/Posts")
+    .then(res => res.json())
+    .then(data => {
+        console.log(data);
+    })
+    .catch(err => console.log(err))
+}
 
 
 
@@ -28,7 +28,6 @@ function postPost() {
     .then(data => console.log(data))
     .catch(err => console.log(err))
 }
-
 
 postPost();
 
