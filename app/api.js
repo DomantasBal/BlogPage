@@ -2,41 +2,44 @@ const form = document.getElementById("new-post-form");
 const blog = document.getElementById("blog");
 
 const API_ENDPOINTS = {
-    get: "https://testapi.io/api/Domantas/resource/Posts"
-}
+  get: "https://testapi.io/api/Domantas/resource/Posts",
+};
 
-// SHOW POSTS ON LOAD
+// =============== Bug here ===================
 window.onload = async () => {
-    const posts = await getData(API_ENDPOINTS.get)
-    posts.data.forEach(post => {
-        blog.innerHTML += postTemplate(post)
-        
-    })
-}
+  const posts = await getData(API_ENDPOINTS.get);
 
+    // for(post of posts.data){
+    //     blog.innerHTML += postTemplate(post);
+    // }
+
+    posts.data.forEach(post => {
+        blog.innerHTML += postTemplate(post);
+    })
+
+};
+
+// =============== Bug here ===================
 
 const getData = (url) => {
-    return fetch(url)
-    .then(response => response.json())
-    .then(data => data)
-    .catch(error => console.log(error))
-}
+  return fetch(url)
+    .then((response) => response.json())
+    .then((data) => data)
+    .catch((error) => console.log(error));
+};
 
 // MAKE POST BUTTON EVENT
 form.addEventListener("submit", (event) => {
   event.preventDefault();
 
-    // SEND INPUTS TO API
-    let inputs = getInputValues();
-
-     postData(inputs);
+  // SEND INPUTS TO API
+  let inputs = getInputValues();
+  postData(inputs);
 
 });
 
-
-
 // POST METHOD
-function postData (formData) {
+function postData(formData) {
   return fetch("https://testapi.io/api/Domantas/resource/Posts", {
     method: "POST",
     headers: { "Content-type": "application/json" },
@@ -45,16 +48,10 @@ function postData (formData) {
     .then((response) => response.json())
     .then((data) => data)
     .catch((error) => error);
-};
+}
 
-
-
-
-
-
-
-// SINGLE POST TEMPLATE 
-function postTemplate(data){
+// SINGLE POST TEMPLATE
+function postTemplate(data) {
   return `
         <div id=${data.id} class="post">
           <img src="${data.img}" alt="" />
@@ -73,10 +70,8 @@ function postTemplate(data){
             </div>
           </div>
         </div>
-    `
+    `;
 }
-
-
 
 // COLLECTS INPUT VALUES - MAKES POST OBJECT WITH CONSTRUCTOR
 function getInputValues() {
@@ -86,7 +81,7 @@ function getInputValues() {
     this.text = text;
     this.img = img;
   }
-//   NEW POST WITH DATA
+  //   NEW POST WITH DATA
   const newPost = new Post(form[0].value, form[1].value, form[2].value);
   return newPost;
 }
