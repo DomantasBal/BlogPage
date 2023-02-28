@@ -222,6 +222,12 @@ p{
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.center-btn{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
     margin-bottom: 100px;
 }
 
@@ -277,6 +283,13 @@ p{
     background: var(--accent-color);
     padding: 30px 30px;
     border-radius: 12px;
+}
+
+.hidden{
+    position: absolute;
+    top: 950px;
+    left:15px;
+    opacity: 0;
 }
 
 
