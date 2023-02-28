@@ -1,35 +1,23 @@
 const form = document.getElementById("new-post-form");
 const blog = document.getElementById("blog");
 
-const API_ENDPOINTS = {
-    get: "https://testapi.io/api/Domantas/resource/Posts"
-}
-
 // SHOW POSTS ON LOAD
 window.onload = async () => {
-    const posts = await getData(API_ENDPOINTS.get)
+    const posts = await getData("https://testapi.io/api/Domantas/resource/Posts")
     posts.data.forEach(post => {
         blog.innerHTML += postTemplate(post)
-        
     })
 }
 
 
-const getData = (url) => {
-    return fetch(url)
-    .then(response => response.json())
-    .then(data => data)
-    .catch(error => console.log(error))
-}
-
 // MAKE POST BUTTON EVENT
-form.addEventListener("submit", (event) => {
+form.addEventListener("submit", async (event) => {
   event.preventDefault();
 
     // SEND INPUTS TO API
     let inputs = getInputValues();
 
-     postData(inputs);
+    await postData(inputs);
 
 });
 
@@ -47,7 +35,14 @@ function postData (formData) {
     .catch((error) => error);
 };
 
+function getData (url) {
+    return fetch(url)
+    .then(response => response.json())
+    .then(data => {
+        return data;
+    })
 
+} 
 
 
 
@@ -56,7 +51,7 @@ function postData (formData) {
 // SINGLE POST TEMPLATE 
 function postTemplate(data){
   return `
-        <div id=${data.id} class="post">
+        <div class="post">
           <img src="${data.img}" alt="" />
           <div class="post-text-content">
             <h3 class="post-title">${data.title}</h3>
@@ -95,3 +90,5 @@ function getInputValues() {
 function addPost(post) {
   blog.insertAdjacentHTML("beforeend", post);
 }
+
+
