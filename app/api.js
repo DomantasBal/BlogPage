@@ -9,14 +9,13 @@ const API_ENDPOINTS = {
 window.onload = async () => {
   const posts = await getData(API_ENDPOINTS.get);
 
-    // for(post of posts.data){
-    //     blog.innerHTML += postTemplate(post);
-    // }
+  // for(post of posts.data){
+  //     blog.innerHTML += postTemplate(post);
+  // }
 
-    posts.data.forEach(post => {
-        blog.innerHTML += postTemplate(post);
-    })
-
+  posts.data.forEach((post) => {
+    blog.innerHTML += postTemplate(post);
+  });
 };
 
 // =============== Bug here ===================
@@ -35,7 +34,6 @@ form.addEventListener("submit", (event) => {
   // SEND INPUTS TO API
   let inputs = getInputValues();
   postData(inputs);
-
 });
 
 // POST METHOD
