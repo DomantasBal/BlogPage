@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&display=swap"
       rel="stylesheet"
     />
 
@@ -29,19 +29,44 @@
   </head>
   <body>
     <header>
+      <!-- LOGO -->
       <div class="logo-container">
-        <img src="" alt="" class="logo" />
+        <img src="./assets/logo.svg" alt="" class="logo" />
         <div class="logo-text">
           <h1 class="logo-title">Breathe</h1>
           <p class="slogan">My mindfulness blog</p>
         </div>
       </div>
 
+      <!-- BURGER MENU -->
       <div class="burger-menu">
         <div class="bar"></div>
         <div class="bar"></div>
         <div class="bar"></div>
       </div>
+
+      <!-- NAVIGATION -->
+      <nav class="nav">
+        <ul>
+          <li class="nav__item">
+            <a href="index.html" class="nav__link">Home</a>
+          </li>
+          <li class="nav__item">
+            <a href="./blog.html" class="nav__link">Blog</a>
+          </li>
+          <li class="nav__item">
+            <a href="./about-me.html" class="nav__link">About Me</a>
+          </li>
+          <li class="nav__item">
+            <a href="./contact.html" class="nav__link">Contact</a>
+          </li>
+        </ul>
+
+        <div id="close-icon" class="close-icon">
+          <div class="cross-line line-one"></div>
+          <div class="cross-line line-two"></div>
+        </div>
+      </nav>
     </header>
 
     <main>
@@ -70,7 +95,7 @@
         <i class="fa-brands fa-instagram"></i>
       </section>
       <div class="deco-svg">
-        <img src="#" alt="SVG" />
+        <img src="./assets/deco.svg" alt="SVG" />
       </div>
 
       <section class="recent-posts">

@@ -22,7 +22,74 @@ header{
     padding: 25px;
     background: #FFFDFA;
     height: 80px;
+
 }
+
+.nav{
+    background: #CFE6DD;
+    position: absolute;
+    top:0;
+    right:0;
+    height: 100vh;
+    width: 0%;
+    font-family: var(--lato);
+    font-weight: 300;
+    font-size: 1.6rem;
+    display: flex;
+    justify-content: space-between;
+    transition: width 0.5s ease-out, opacity 1s;
+    overflow-x: hidden;
+}
+
+.nav ul{
+    list-style-type: none;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.nav__item{
+    margin: 20px;
+}
+
+.nav__link{
+    text-decoration: none;
+    color: var(--secondary-color);
+}
+
+
+.nav__link:hover{
+    color:var(--primary-color);
+}
+
+.nav__link:visited{
+    color: var(--primary-color);
+}
+
+#close-icon{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top:40px;
+    right:3px;
+    cursor: pointer;
+    display: none;
+}
+
+.cross-line{
+    width: 25px;
+    border-top: 3px solid white;
+}
+.line-one{
+    transition: transform 1s;
+    transform:rotate(140deg);
+    position: absolute;
+}
+
+.line-two{
+    transform:rotate(220deg);
+}
+
 
 body{
     width: 100%;
@@ -39,7 +106,7 @@ h2{
 }
 
 p{
-    font-weight: 400;
+    font-weight: 300;
     color: var(--primary-color)
 }
 
@@ -47,30 +114,34 @@ p{
 .burger-menu{
     display: flex;
     flex-direction: column;
+    cursor:pointer;
 }
 .bar {
-    width: 25px;
-    border-bottom: 2px solid black;
-    margin: 3px;
+    width: 23px;
+    border-bottom: 2px solid var(--primary-color);
+    margin: 4px;
     color: var(--primary-color)
 }
+
+/* LOGO */
 
 .logo-container{
     display: flex;
     align-items: center;
 }
+.logo-title{
+    font-weight: 400;
+    letter-spacing: 0.8px;
+    font-size: 1.2rem;
+}
 .logo-text{
-    margin-left: 10px;
+    margin-left: 15px;
+    font-family: var(--lato) ;
 }
 
-.logo-title{
-    font-weight: 700;
-    font-size: 1rem;
-}
 
 .logo{
     margin: 0;
-    background: blue;
     width: 64px;
     height: 64px;
 }
@@ -95,7 +166,7 @@ p{
     width: 150px;
     line-height: 2.3rem;
     font-size: 2rem;
-    font-weight: 400;
+    font-weight: 300;
 }
 
 .hero__text p {
@@ -171,7 +242,7 @@ p{
     display: flex;
     justify-content: center;
     gap: 30px;
-    margin: 50px 0px;
+    margin: 50px 0px -50px 0px;
 }
 
 /* Deco SVG */
@@ -179,6 +250,13 @@ p{
 .deco-svg{
     display:flex;
     justify-content: center;
+
+}
+
+.deco-svg img{
+    width: 200px;
+    height: 200px;
+    transform:rotate(60deg);
 }
 
 /* RECENT POSTS SECTION*/
@@ -246,7 +324,6 @@ p{
 }
 
 .post-text-content{
-    /* background: red; */
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -280,7 +357,7 @@ p{
 /* POST FORM INPUT STYLING  */
 
 .post-form-container{
-    background: var(--accent-color);
+    /* background: var(--accent-color); */
     padding: 30px 30px;
     border-radius: 12px;
 }
@@ -298,6 +375,13 @@ p{
     padding: 20px;
     margin: 10px 0px;
     border: 1px solid var(--secondary-color);
+    transition: box-shadow 0.5s;
+    color: var(--secondary-color)
+}
+
+#new-post-form input:focus{
+    box-shadow:  0 0 0 1px var(--secondary-color);
+    outline: 0;
 }
 
 #new-post-form label{

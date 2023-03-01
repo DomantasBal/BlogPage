@@ -2,23 +2,15 @@ const form = document.getElementById("new-post-form");
 const blog = document.getElementById("blog");
 
 const API_ENDPOINTS = {
-  get: "https://testapi.io/api/Domantas/resource/Posts",
+  get: "https://testapi.io/api/Domantas/resource/posts",
 };
 
-// =============== Bug here ===================
 window.onload = async () => {
   const posts = await getData(API_ENDPOINTS.get);
-
-  // for(post of posts.data){
-  //     blog.innerHTML += postTemplate(post);
-  // }
-
   posts.data.forEach((post) => {
     blog.innerHTML += postTemplate(post);
   });
 };
-
-// =============== Bug here ===================
 
 const getData = (url) => {
   return fetch(url)
@@ -49,7 +41,8 @@ function postData(formData) {
 }
 
 // SINGLE POST TEMPLATE
-function postTemplate(data) {
+const postTemplate = (data) => {
+  const x = JSON.stringify(data);
   return `
         <div id=${data.id} class="post">
           <img src="${data.img}" alt="" />
@@ -69,7 +62,7 @@ function postTemplate(data) {
           </div>
         </div>
     `;
-}
+};
 
 // COLLECTS INPUT VALUES - MAKES POST OBJECT WITH CONSTRUCTOR
 function getInputValues() {
