@@ -22,7 +22,6 @@ header{
     padding: 25px;
     background: #FFFDFA;
     height: 80px;
-
 }
 
 .nav{
@@ -110,11 +109,26 @@ p{
     color: var(--primary-color)
 }
 
+.header-menu-right{
+    display:flex;
+    align-items: center;
+    gap: 15px;
+    color: var(--primary-color);
+}
+
+/* Login Icon */
+#login-icon, #login-link, #login-link:visited{
+    font-size: 22px;
+    cursor:pointer;
+    color: var(--primary-color);
+}
+
 /* Burger Menu */
 .burger-menu{
     display: flex;
     flex-direction: column;
     cursor:pointer;
+
 }
 .bar {
     width: 23px;
@@ -282,7 +296,7 @@ p{
 
 /* POSTS SECTION */
 
-.new-post-btn{
+.new-post-btn, .register-btn{
     display: flex;
     align-items: center;
     gap: 10px;
@@ -293,6 +307,15 @@ p{
 
 .new-post-btn p {
     color:white;
+
+}
+
+.register-btn {
+    margin: 10px 0px;
+}
+.register-btn p{
+    color: white;
+    font-weight: 400;
 }
 
 #blog{
@@ -356,21 +379,12 @@ p{
 
 /* POST FORM INPUT STYLING  */
 
-.post-form-container{
-    /* background: var(--accent-color); */
+.post-form-container, .login-form-container{
     padding: 30px 30px;
     border-radius: 12px;
 }
 
-.hidden{
-    position: absolute;
-    top: 950px;
-    left:15px;
-    opacity: 0;
-}
-
-
-#new-post-form input{
+#new-post-form input, #login-form input{
     width: 100%;
     padding: 20px;
     margin: 10px 0px;
@@ -379,7 +393,7 @@ p{
     color: var(--secondary-color)
 }
 
-#new-post-form input:focus{
+#new-post-form input:focus, #login-form input:focus{
     box-shadow:  0 0 0 1px var(--secondary-color);
     outline: 0;
 }
@@ -390,10 +404,49 @@ p{
     color:var(--secondary-color)
 }
 
-#new-post-form button {
+#new-post-form button, #login-form button {
     width: 100%;
 }
 
+/* LOGIN FORM */
+
+.login-form-container{
+    position:fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+#login-form{
+    background: var(--accent-color);
+    padding: 30px;
+    border-radius: 12px;
+    width: 320px;
+    display: none;
+}
+
+.login-form__title{
+    font-family: var(--lato);
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-align: center;
+    margin: 0px 0px 20px 0px;
+}
+
+.close-container{
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#login-close-icon{
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: var(--lato);
+}
 
 
 

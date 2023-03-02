@@ -26,6 +26,7 @@
     <!-- Javascript -->
     <script defer src="./app/api.js"></script>
     <script defer src="./app/burger.js"></script>
+    <script defer src="./app/login.js"></script>
   </head>
   <body>
     <header>
@@ -38,11 +39,16 @@
         </div>
       </div>
 
-      <!-- BURGER MENU -->
-      <div class="burger-menu">
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
+      <div class="header-menu-right">
+        <!-- LOGIN ICON -->
+        <i id="login-icon" class="fa-solid fa-user"></i>
+
+        <!-- BURGER MENU -->
+        <div class="burger-menu">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
       </div>
 
       <!-- NAVIGATION -->
@@ -76,6 +82,30 @@
           <p>The blog of here and now</p>
         </div>
       </section>
+
+      <!-- LOGIN FORM -->
+      <div class="login-form-container">
+        <form id="login-form" action="">
+          <p class="login-form__title">Login or Register</p>
+          <div>
+            <input type="text" id="username" placeholder="Username" />
+          </div>
+          <div>
+            <input type="text" id="acc-email" placeholder="Email" />
+          </div>
+          <div>
+            <input type="password" id="password" placeholder="Password" />
+          </div>
+          <button id="login" class="btn" type="submit">Login</button>
+          <div class="btn register-btn">
+            <i class="fa-solid fa-user-plus"></i>
+            <p>Register</p>
+          </div>
+          <div class="close-container">
+            <a id="login-close-icon" href="">close</a>
+          </div>
+        </form>
+      </div>
 
       <section class="mail">
         <h2>Mind your mailbox for the new posts</h2>
@@ -134,6 +164,7 @@
         <!-- NEW POST FORM END -->
 
         <!-- SINGLE POST TEMPLATE -->
+        <!--         
         <div class="post">
           <img src="./assets/post.webp" alt="" />
           <div class="post-text-content">
@@ -150,7 +181,7 @@
               <div class="right-icons"><i class="fa-regular fa-heart"></i></div>
             </div>
           </div>
-        </div>
+        </div> -->
 
         <!-- SINGLE POST TEMPLATE END -->
       </section>
