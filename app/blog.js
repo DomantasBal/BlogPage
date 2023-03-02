@@ -1,10 +1,13 @@
 const form = document.getElementById("new-post-form");
 const blog = document.getElementById("blog");
+const button = document.querySelector("#new-post-btn");
 
 const API_ENDPOINTS = {
-  get: "https://testapi.io/api/Domantas/resource/posts",
+  get: "https://testapi.io/api/Domantas/resource/newPosts",
+  post: "https://testapi.io/api/Domantas/resource/newPosts",
 };
 
+// SHOW POSTS ON WEBSITE LOAD
 window.onload = async () => {
   const posts = await getData(API_ENDPOINTS.get);
   posts.data.forEach((post) => {
@@ -12,32 +15,24 @@ window.onload = async () => {
   });
 };
 
-const getData = (url) => {
+// GET METHOD
+function getData(url) {
   return fetch(url)
     .then((response) => response.json())
     .then((data) => data)
     .catch((error) => console.log(error));
-};
-
-// MAKE POST BUTTON EVENT
-form.addEventListener("submit", (event) => {
-  event.preventDefault();
-
-  // SEND INPUTS TO API
-  let inputs = getInputValues();
-  postData(inputs);
-});
+}
 
 // POST METHOD
-function postData(formData) {
-  return fetch("https://testapi.io/api/Domantas/resource/Posts", {
+function postData(url, formData) {
+  return fetch(url, {
     method: "POST",
     headers: { "Content-type": "application/json" },
-    body: JSON.stringify(formData),
+    body: JSON.stringify(Object.fromEntries(formData.entries())),
   })
     .then((response) => response.json())
     .then((data) => data)
-    .catch((error) => error);
+    .catch((error) => console.log(error));
 }
 
 // SINGLE POST TEMPLATE
@@ -63,21 +58,3 @@ const postTemplate = (data) => {
         </div>
     `;
 };
-
-// COLLECTS INPUT VALUES - MAKES POST OBJECT WITH CONSTRUCTOR
-function getInputValues() {
-  // POST DATA CONSTRUCTOR
-  function Post(title, text, img) {
-    this.title = title;
-    this.text = text;
-    this.img = img;
-  }
-  //   NEW POST WITH DATA
-  const newPost = new Post(form[0].value, form[1].value, form[2].value);
-  return newPost;
-}
-
-// ADD POST TO BLOG
-function addPost(post) {
-  blog.insertAdjacentHTML("beforeend", post);
-}
