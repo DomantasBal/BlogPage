@@ -8,4 +8,5 @@ loginIcon.addEventListener("click", (event) => {
   event.preventDefault();
   countClicks++;
   loginForm.style.opacity = countClicks % 2 === 1 ? "1" : "0";
+  loginForm.style.display = countClicks % 2 === 1 ? "block" : "none";
 });
