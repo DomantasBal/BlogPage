@@ -27,6 +27,7 @@
     <script defer src="./app/blog.js"></script>
     <script defer src="./app/burger.js"></script>
     <script defer src="./app/login.js"></script>
+    <script defer src="./app/test.js"></script>
   </head>
   <body>
     <header>
@@ -131,26 +132,27 @@
       </section>
 
       <section id="blog">
-        <!-- NEW POST FORM -->
+        <!-- ============================= NEW POST FORM ================================ -->
         <div class="post-form-container">
           <form id="new-post-form" action="">
             <div>
               <label for="post-title">Post title: </label>
-              <input type="text" id="post-title" />
+              <input type="text" id="post-title" name="title" />
             </div>
             <div>
               <label for="post-title">Post text: </label>
-              <input type="text" id="post-text" />
+              <input type="text" id="post-text" name="text" />
             </div>
             <div>
               <label for="post-title">Post Image Url: </label>
-              <input type="text" id="post-img" />
+              <input type="text" id="post-img" name="img" />
             </div>
             <button id="new-post-btn" class="btn" type="submit">
               Make New Post
             </button>
           </form>
         </div>
+        <!-- ============================= NEW POST FORM ================================ -->
 
         <!-- NEW POST FORM END -->
 

@@ -337,6 +337,28 @@ p{
     width: 80%;
 }
 
+.modify-buttons{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    margin: 20px 30px 20px 0px ;
+    gap: 10px;
+    font-size: 18px;
+    color: var(--secondary-color);
+}
+
+
+.modify-buttons .edit, .modify-buttons .delete{
+    cursor:pointer;
+}
+
+.modify-buttons .edit:hover, .modify-buttons .delete:hover{
+    cursor:pointer;
+    transition: 0.25s;
+    color: #2CB656;
+}
+
+
 .post img {
     width: 100%;
     object-fit: cover;
