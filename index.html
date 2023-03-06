@@ -27,7 +27,6 @@
     <script defer src="./app/blog.js"></script>
     <script defer src="./app/burger.js"></script>
     <script defer src="./app/login.js"></script>
-    <script defer src="./app/test.js"></script>
   </head>
   <body>
     <header>
@@ -98,10 +97,12 @@
             <input type="password" id="password" placeholder="Password" />
           </div>
           <button id="login" class="btn" type="submit">Login</button>
-          <div class="btn register-btn">
-            <i class="fa-solid fa-user-plus"></i>
-            <p>Register</p>
-          </div>
+          <a href="./register.html">
+            <div class="btn register-btn">
+              <i class="fa-solid fa-user-plus"></i>
+              <p>Register</p>
+            </div>
+          </a>
         </form>
       </div>
 
@@ -157,8 +158,8 @@
         <!-- NEW POST FORM END -->
 
         <!-- SINGLE POST TEMPLATE -->
-        <!--         
-        <div class="post">
+
+        <!-- <div class="post">
           <img src="./assets/post.webp" alt="" />
           <div class="post-text-content">
             <h3 class="post-title">App & Down: 5 Apps to Help You Meditate</h3>
@@ -168,10 +169,14 @@
             <hr />
             <div class="post-icons">
               <div class="left-icons">
-                <i class="fa-regular fa-eye"></i>
-                <i class="fa-regular fa-comment"></i>
+                <i class="fa-regular fa-eye"></i
+                ><span class="stats view-count">0</span>
+                <i class="fa-regular fa-comment"></i
+                ><span class="stats comment-count">0</span>
               </div>
-              <div class="right-icons"><i class="fa-regular fa-heart"></i></div>
+              <div class="right-icons">
+                <i class="fa-regular fa-heart"></i>
+              </div>
             </div>
           </div>
         </div> -->

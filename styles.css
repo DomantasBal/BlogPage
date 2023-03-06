@@ -4,6 +4,9 @@
     --secondary-color: #1C6357;
     --accent-color: #E7F1DA;
 
+    /* BUTTON HOVER */
+    --hover-btn: #2CB656;
+
     /* FONTS */
     --times: 'Times New Roman', Times, serif;
     --lato: 'Lato', sans-serif;
@@ -107,6 +110,10 @@ h2{
 p{
     font-weight: 300;
     color: var(--primary-color)
+}
+
+a{
+    text-decoration: none;
 }
 
 .header-menu-right{
@@ -243,6 +250,11 @@ p{
     font-size: 1.2rem;
     font-weight: 300;
     cursor: pointer;
+    transition: background 0.25s;
+}
+
+.btn:hover{
+    background: var(--hover-btn);
 }
 
 .btn-subs{
@@ -355,9 +367,8 @@ p{
 .modify-buttons .edit:hover, .modify-buttons .delete:hover{
     cursor:pointer;
     transition: 0.25s;
-    color: #2CB656;
+    color: var(--hover-btn);
 }
-
 
 .post img {
     width: 100%;
@@ -390,8 +401,17 @@ p{
     margin: 10px 0px;
 }
 
+i:hover{
+    color: var(--hover-btn);
+}
+
 .fa-comment{
     margin-left: 30px;
+}
+
+.stats{
+    margin-left: 5px;
+    font-family: var(--lato);
 }
 
 
@@ -425,6 +445,10 @@ p{
 #new-post-form button, #login-form button {
     width: 100%;
 }
+
+
+
+
 
 /* LOGIN FORM */
 

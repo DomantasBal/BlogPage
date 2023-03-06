@@ -2,7 +2,7 @@ const loginIcon = document.querySelector("#login-icon");
 const loginCloseIcon = document.querySelector("#login-close-icon");
 const loginForm = document.querySelector("#login-form");
 
-// LOGIN ICON OPEN - CLOSE FORM
+// LOGIN ICON OPEN - CLOSE FORM ANIMATION
 let countClicks = 0;
 loginIcon.addEventListener("click", (event) => {
   event.preventDefault();

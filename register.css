@@ -1,0 +1,32 @@
+body{
+    background: url("assets/waves.jpeg");
+    background-size: auto;
+    background-repeat: no-repeat;
+    padding: 100px 30px;
+}
+
+
+#register-post-form input{
+    width: 100%;
+    padding: 20px;
+    margin: 10px 0px;
+    border: 1px solid var(--secondary-color);
+    transition: box-shadow 0.5s;
+    color: white;
+}
+
+#register-post-form input:focus{
+    box-shadow:  0 0 0 1px var(--secondary-color);
+    outline: 0;
+}
+
+#register-post-form label{
+    margin-bottom: 10px;
+    font-family: var(--lato);
+    color:white;
+    font-size: 1.5rem;
+}
+
+#register-post-form button{
+    width: 100%;
+}

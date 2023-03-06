@@ -56,11 +56,11 @@ const updatePost = (id, updatedData) => {
     .catch((error) => console.log(error));
 };
 
-let newStuff = {
-  title: "111",
-  text: "123",
-  img: "upd",
-};
+// let newStuff = {
+//   title: "111",
+//   text: "123",
+//   img: "upd",
+// };
 // updatePost(4, newStuff);
 
 ///////////////////////////////////////////////////////////////////////////////////////////
@@ -70,6 +70,9 @@ const newPostSubmit = async (event) => {
   event.preventDefault();
   const formData = new FormData(event.target);
   const newPost = await createPost(API_ENDPOINTS.post, formData);
+  console.log(newPost);
+
+  console.log("submited");
 };
 
 // POST SUBMIT ACTION
@@ -96,7 +99,9 @@ const postTemplate = (data) => {
             <div class="post-icons">
               <div class="left-icons">
                 <i class="fa-regular fa-eye"></i>
+                <span class="stats view-count">0</span>
                 <i class="fa-regular fa-comment"></i>
+                <span class="stats comment-count">0</span>
               </div>
               <div class="right-icons"><i class="fa-regular fa-heart"></i></div>
             </div>
