@@ -137,6 +137,13 @@ a{
     color: var(--primary-color);
 }
 
+.login-to-see-notification{
+    margin: 100px 0px;
+    font-size: 2.3rem;
+    font-family: var(--lato);
+    color: var(--secondary-color)
+}
+
 /* Burger Menu */
 .burger-menu{
     display: flex;
@@ -335,7 +342,7 @@ a{
 
 #blog{
     /* background: lightblue; */
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
 }

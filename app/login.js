@@ -4,6 +4,7 @@ const username = document.querySelector("#username");
 const password = document.querySelector("#username");
 const loginIcon = document.querySelector("#login-icon");
 const logoutIcon = document.querySelector("#logout-icon");
+const recentPosts = document.querySelector(".recent-posts");
 
 // LOGIN ICON OPEN - CLOSE FORM ANIMATION
 let countClicks = 0;
@@ -51,18 +52,15 @@ const findUser = (data) => {
 
 loginForm.addEventListener("submit", handleLogin);
 
-window.onload = () => {
-  checkUserLogin();
-};
-
 function checkUserLogin() {
   if (localStorage.length > 0) {
-    console.log("loged in");
     loginIcon.style.display = "none";
     logoutIcon.style.display = "block";
+    blog.style.display = "flex";
   } else {
     logoutIcon.style.display = "none";
-    console.log("loged out");
+    recentPosts.display = "none";
+    recentPosts.innerHTML += `<p class="login-to-see-notification"> Please login to see posts. </p>`;
   }
 }
 

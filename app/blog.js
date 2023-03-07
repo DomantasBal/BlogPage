@@ -21,7 +21,8 @@ const getData = (url) => {
 const createPost = (url, data) => {
   return fetch(url, {
     method: "POST",
-    body: data,
+    headers: { "Content-type": "application/json" },
+    body: JSON.stringify(data),
   })
     .then((response) => response.json())
     .then((data) => {
@@ -47,8 +48,7 @@ const updatePost = (id, updatedData) => {
   const url = API_ENDPOINTS.put(id);
   return fetch(url, {
     method: "PUT",
-    // AR HEADERIAI REIKALINGI TIK PUT PATCH? AR IR DELETE IR POST?
-    headers: { "Content-type": "application/json" },
+    // headers: { "Content-type": "application/json" },
     body: JSON.stringify(updatedData),
   })
     .then((response) => response.json())
@@ -109,15 +109,10 @@ const postTemplate = (data) => {
 };
 
 // SHOW POSTS ON WEBSITE LOAD
-// window.onload = async () => {
-//   const posts = await getData(API_ENDPOINTS.get);
-//   console.log(posts);
-//   posts.data.forEach((post) => {
-//     blog.innerHTML += postTemplate(post);
-//     console.log("posts load");
-//   });
-// };
-
-window.onload = () => {
-  console.log("sldkfj");
+window.onload = async () => {
+  const posts = await getData(API_ENDPOINTS.get);
+  posts.data.forEach((post) => {
+    blog.innerHTML += postTemplate(post);
+    checkUserLogin();
+  });
 };
