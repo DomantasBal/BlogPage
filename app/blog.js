@@ -118,4 +118,6 @@ const postTemplate = (data) => {
 //   });
 // };
 
-window.onload = async () => {};
+window.onload = () => {
+  console.log("sldkfj");
+};

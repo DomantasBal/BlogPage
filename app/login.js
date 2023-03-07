@@ -59,6 +59,7 @@ function checkUserLogin() {
   if (localStorage.length > 0) {
     console.log("loged in");
     loginIcon.style.display = "none";
+    logoutIcon.style.display = "block";
   } else {
     logoutIcon.style.display = "none";
     console.log("loged out");
@@ -76,6 +77,8 @@ function failLoginNotification() {
 // LOGOUT ACTION
 
 logoutIcon.addEventListener("click", () => {
+  logoutIcon.style.display = "none";
+  loginIcon.style.display = "block";
   localStorage.clear();
   location.reload();
 });

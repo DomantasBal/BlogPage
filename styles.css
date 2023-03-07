@@ -131,6 +131,7 @@ a{
 }
 
 #logout-icon, #logout-link, #logout-link:visited{
+    display: none;
     font-size: 22px;
     cursor:pointer;
     color: var(--primary-color);
