@@ -491,7 +491,15 @@ i:hover{
     z-index: 1;
   }
 
-
-
-
+  /* NOTIFICATION ON LOGIN */
+.success{
+    color:green;
+    font-size: 1.5rem;
+    padding: 10px;
+}
+.fail{
+    color: red;
+    font-size: 1.5rem;
+    padding: 10px;
+}
 

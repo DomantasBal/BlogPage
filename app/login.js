@@ -1,6 +1,8 @@
 const loginIcon = document.querySelector("#login-icon");
 const loginCloseIcon = document.querySelector("#login-close-icon");
 const loginForm = document.querySelector("#login-form");
+const username = document.querySelector("#username");
+const password = document.querySelector("#username");
 
 // LOGIN ICON OPEN - CLOSE FORM ANIMATION
 let countClicks = 0;
@@ -20,13 +22,38 @@ const getUsers = (url) => {
     .catch((error) => console.log(error));
 };
 
-const handleLogin = async (event) => {
-  event.preventDefault();
-  const users = await getUsers(getUsers);
-  let userList = users.data.find((data) => findUser(data));
-  console.log(userList);
+function successLoginNotification() {
+  loginForm.innerHTML = `<p class="success"> Login Successful </p>`;
+}
+function failLoginNotification() {
+  loginForm.innerHTML = `<p class="fail"> Wrong Credentials </p>`;
+}
 
-  console.log("works");
+const handleLogin = async (e) => {
+  e.preventDefault();
+  const users = await getUsers(
+    "	https://testapi.io/api/Domantas/resource/users"
+  );
+  let foundUser = users.data.find((data) => findUser(data));
+  if (foundUser) {
+    localStorage.setItem("user", JSON.stringify(foundUser));
+    location.reload();
+    loginForm.textContent = "Login Success";
+    successLoginNotification();
+    changeIcon();
+  } else {
+    loginForm.textContent = "Wrong Credentials";
+    setTimeout(() => {
+      location.reload();
+    }, 2000);
+    failLoginNotification();
+  }
+};
+
+const findUser = (data) => {
+  let userNameVal = username.value;
+  let userPassVal = password.value;
+  return userNameVal === data.username && userPassVal === data.password;
 };
 
 loginForm.addEventListener("submit", handleLogin);
