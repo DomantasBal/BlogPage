@@ -1,8 +1,9 @@
-const loginIcon = document.querySelector("#login-icon");
 const loginCloseIcon = document.querySelector("#login-close-icon");
 const loginForm = document.querySelector("#login-form");
 const username = document.querySelector("#username");
 const password = document.querySelector("#username");
+const loginIcon = document.querySelector("#login-icon");
+const logoutIcon = document.querySelector("#logout-icon");
 
 // LOGIN ICON OPEN - CLOSE FORM ANIMATION
 let countClicks = 0;
@@ -22,13 +23,6 @@ const getUsers = (url) => {
     .catch((error) => console.log(error));
 };
 
-function successLoginNotification() {
-  loginForm.innerHTML = `<p class="success"> Login Successful </p>`;
-}
-function failLoginNotification() {
-  loginForm.innerHTML = `<p class="fail"> Wrong Credentials </p>`;
-}
-
 const handleLogin = async (e) => {
   e.preventDefault();
   const users = await getUsers(
@@ -40,7 +34,6 @@ const handleLogin = async (e) => {
     location.reload();
     loginForm.textContent = "Login Success";
     successLoginNotification();
-    changeIcon();
   } else {
     loginForm.textContent = "Wrong Credentials";
     setTimeout(() => {
@@ -57,3 +50,32 @@ const findUser = (data) => {
 };
 
 loginForm.addEventListener("submit", handleLogin);
+
+window.onload = () => {
+  checkUserLogin();
+};
+
+function checkUserLogin() {
+  if (localStorage.length > 0) {
+    console.log("loged in");
+    loginIcon.style.display = "none";
+  } else {
+    logoutIcon.style.display = "none";
+    console.log("loged out");
+  }
+}
+
+// LOGIN NOTIFICATIONS
+function successLoginNotification() {
+  loginForm.innerHTML = `<p class="success"> Login Successful </p>`;
+}
+function failLoginNotification() {
+  loginForm.innerHTML = `<p class="fail"> Wrong Credentials </p>`;
+}
+
+// LOGOUT ACTION
+
+logoutIcon.addEventListener("click", () => {
+  localStorage.clear();
+  location.reload();
+});

@@ -130,6 +130,12 @@ a{
     color: var(--primary-color);
 }
 
+#logout-icon, #logout-link, #logout-link:visited{
+    font-size: 22px;
+    cursor:pointer;
+    color: var(--primary-color);
+}
+
 /* Burger Menu */
 .burger-menu{
     display: flex;
