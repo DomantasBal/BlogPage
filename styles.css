@@ -432,7 +432,7 @@ i:hover{
 }
 
 #new-post-form input:focus, #login-form input:focus{
-    box-shadow:  0 0 0 1px var(--secondary-color);
+    box-shadow:  0 0 0 3px var(--secondary-color);
     outline: 0;
 }
 

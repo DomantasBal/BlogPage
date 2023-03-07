@@ -9,9 +9,58 @@
     <script defer src="./register.js"></script>
     <title>Document</title>
   </head>
+
   <body>
+    <header>
+      <!-- LOGO -->
+      <a href="./index.html">
+        <div class="logo-container">
+          <img src="./assets/logo.svg" alt="" class="logo" />
+          <div class="logo-text">
+            <h1 class="logo-title">Breathe</h1>
+            <p class="slogan">My mindfulness blog</p>
+          </div>
+        </div>
+      </a>
+
+      <div class="header-menu-right">
+        <!-- LOGIN ICON -->
+        <i id="login-icon" class="fa-solid fa-user"></i>
+
+        <!-- BURGER MENU -->
+        <div class="burger-menu">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
+      </div>
+
+      <!-- NAVIGATION -->
+      <nav class="nav">
+        <ul>
+          <li class="nav__item">
+            <a href="index.html" class="nav__link">Home</a>
+          </li>
+          <li class="nav__item">
+            <a href="./blog.html" class="nav__link">Blog</a>
+          </li>
+          <li class="nav__item">
+            <a href="./about-me.html" class="nav__link">About Me</a>
+          </li>
+          <li class="nav__item">
+            <a href="./contact.html" class="nav__link">Contact</a>
+          </li>
+        </ul>
+
+        <div id="close-icon" class="close-icon">
+          <div class="cross-line line-one"></div>
+          <div class="cross-line line-two"></div>
+        </div>
+      </nav>
+    </header>
     <div class="register-form-container">
-      <form id="register-post-form" action="">
+      <form id="register-form" action="">
+        <h1>Sign up</h1>
         <div>
           <label for="post-title">Username: </label>
           <input type="text" id="username" name="username" />
