@@ -12,6 +12,7 @@ body{
     background: var(--accent-color);
     border-radius: 12px;
     display: flex;
+    justify-content: center;
 
 }
 
