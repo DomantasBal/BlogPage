@@ -71,8 +71,6 @@ const newPostSubmit = async (event) => {
   const formData = new FormData(event.target);
   const newPost = await createPost(API_ENDPOINTS.post, formData);
   console.log(newPost);
-
-  console.log("submited");
 };
 
 // POST SUBMIT ACTION
@@ -111,9 +109,13 @@ const postTemplate = (data) => {
 };
 
 // SHOW POSTS ON WEBSITE LOAD
-window.onload = async () => {
-  const posts = await getData(API_ENDPOINTS.get);
-  posts.data.forEach((post) => {
-    blog.innerHTML += postTemplate(post);
-  });
-};
+// window.onload = async () => {
+//   const posts = await getData(API_ENDPOINTS.get);
+//   console.log(posts);
+//   posts.data.forEach((post) => {
+//     blog.innerHTML += postTemplate(post);
+//     console.log("posts load");
+//   });
+// };
+
+window.onload = async () => {};
