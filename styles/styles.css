@@ -92,7 +92,6 @@ header{
     transform:rotate(220deg);
 }
 
-
 body{
     width: 100%;
 }
@@ -186,7 +185,7 @@ a{
 
 .hero{
     height: 600px;
-    background: url(./assets/hero-mobile.webp) no-repeat;
+    background: url(../assets/hero-mobile.webp) no-repeat;
     background-size: cover;
     background-position: center bottom;
 
@@ -362,22 +361,30 @@ a{
     width: 80%;
 }
 
-.modify-buttons{
+.post-header{
     display: flex;
-    justify-content: flex-end;
-    width: 100%;
+    justify-content: space-between;
     margin: 20px 30px 20px 0px ;
     gap: 10px;
     font-size: 18px;
     color: var(--secondary-color);
+    width: 95%;
 }
 
+.post-id{
+    font-family: var(--lato);
+    font-weight: 700;
+    color: var(--secondary-color);
+    margin-left: 20px;
+    font-size: 0.8rem;
 
-.modify-buttons .edit, .modify-buttons .delete{
+}
+
+.post-header .edit, .post-header .delete{
     cursor:pointer;
 }
 
-.modify-buttons .edit:hover, .modify-buttons .delete:hover{
+.post-header .edit:hover, .post-header .delete:hover{
     cursor:pointer;
     transition: 0.25s;
     color: var(--hover-btn);
@@ -413,6 +420,8 @@ a{
     justify-content: space-between;
     margin: 10px 0px;
 }
+
+
 
 i:hover{
     color: var(--hover-btn);

@@ -49,10 +49,11 @@ const deletePost = (id) => {
 };
 
 // EDIT POST
-const updatePost = (id, updatedData) => {
+const editPost = (id, updatedData) => {
   const url = API_ENDPOINTS.put(id);
   return fetch(url, {
     method: "PUT",
+    headers: { "Content-type": "application/json" },
     body: JSON.stringify(updatedData),
   })
     .then((response) => response.json())
@@ -60,21 +61,34 @@ const updatePost = (id, updatedData) => {
     .catch((error) => console.log(error));
 };
 
+// ====================== NOT SURE HERE ==================
+// OPEN EDIT FIELD
+const updatePost = (event, data) => {
+  editPost(event, data);
+};
+
+// ====================== NOT SURE HERE ==================
+
 // SINGLE POST TEMPLATE
 const postTemplate = (data) => {
   const x = JSON.stringify(data);
   return `
         <div id=${data.id} class="post">
         
-        <div class="modify-buttons">
-            <i class="fa-solid fa-pen-to-square edit" onClick=handlePostEdit(${data.id})></i>
+        <div class="post-header">
+        <div>   
+        <p class="post-id"> #${data.id}</p>
+        </div>
+        <div>
+            <i id="edit-btn" class="fa-solid fa-pen-to-square edit" onClick=openEdit(${data.id})></i>
             <i class="fa-sharp fa-solid fa-trash delete" onClick=deletePost(${data.id}) ></i>
+            </div>
         </div>
 
           <img src="${data.img}" alt="" />
           <div class="post-text-content">
-            <h3 class="post-title">${data.title}</h3>
-            <p class="post-text">
+            <h3 class="post-title" contentEditable="true">${data.title}</h3>
+            <p class="post-text" contentEditable="true">
               ${data.text}
             </p>
             <hr />
