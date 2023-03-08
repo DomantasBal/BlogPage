@@ -33,6 +33,8 @@ $lato: 'Lato', sans-serif;
     background: #FFFDFA;
     height: 80px;
   }
+
+
   
   .nav {
     background: #CFE6DD;
@@ -82,6 +84,7 @@ $lato: 'Lato', sans-serif;
     right: 3px;
     cursor: pointer;
     display: none;
+    z-index: 4;
   
     .cross-line {
       width: 25px;
@@ -528,3 +531,19 @@ $lato: 'Lato', sans-serif;
     text-align: center;
   }
   
+
+  // DESKTOP
+  // .nav-desktop{
+  //   display: none;
+  // }
+
+  @media screen and (min-width: 1025px) {
+    body {
+      background-color: blue;
+    }
+
+    .burger-menu {
+      display: none;
+    }
+
+  }
