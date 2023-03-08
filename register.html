@@ -24,7 +24,6 @@
 
     <!-- Javascript -->
     <script defer src="./app/register.js"></script>
-    <script defer src="./app/login.js"></script>
     <script defer src="./app/burger.js"></script>
 
     <title>Document</title>
@@ -79,6 +78,7 @@
       </nav>
     </header>
 
+    <!-- REGISTER FORM -->
     <div class="register-form-container">
       <form id="register-form" action="">
         <h1>Sign up</h1>
@@ -93,36 +93,6 @@
         <button id="register-form-btn" class="btn" type="submit">
           Register
         </button>
-      </form>
-    </div>
-
-    <!-- LOGIN FORM -->
-    <div class="login-form-container">
-      <form id="login-form" action="">
-        <p class="login-form__title">Login or Register</p>
-        <div>
-          <input
-            type="text"
-            id="username"
-            placeholder="Username"
-            name="username"
-          />
-        </div>
-        <div>
-          <input
-            type="password"
-            id="password"
-            placeholder="Password"
-            name="password"
-          />
-        </div>
-        <button id="login" class="btn" type="submit">Login</button>
-        <a href="./register.html">
-          <div class="btn register-btn">
-            <i class="fa-solid fa-user-plus"></i>
-            <p>Register</p>
-          </div>
-        </a>
       </form>
     </div>
   </body>

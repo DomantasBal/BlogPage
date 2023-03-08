@@ -1,4 +1,4 @@
-const newPostForm = document.getElementById("new-post-form");
+const newPostForm = document.getElementById("post-form");
 const blog = document.getElementById("blog");
 const button = document.querySelector("#new-post-btn");
 
@@ -21,8 +21,13 @@ const getData = (url) => {
 const createPost = (url, data) => {
   return fetch(url, {
     method: "POST",
-    headers: { "Content-type": "application/json" },
-    body: JSON.stringify(data),
+
+    // KODEL SU HEADERIU NEPOSTINA?
+    // headers: { "Content-type": "application/json" },
+
+    // KAIP ZINOTI AR REIKALAUJA HADERIU AR STRINGIFY?
+    // body: JSON.stringify(data),
+    body: data,
   })
     .then((response) => response.json())
     .then((data) => {
@@ -48,33 +53,12 @@ const updatePost = (id, updatedData) => {
   const url = API_ENDPOINTS.put(id);
   return fetch(url, {
     method: "PUT",
-    // headers: { "Content-type": "application/json" },
     body: JSON.stringify(updatedData),
   })
     .then((response) => response.json())
     .then((data) => data)
     .catch((error) => console.log(error));
 };
-
-// let newStuff = {
-//   title: "111",
-//   text: "123",
-//   img: "upd",
-// };
-// updatePost(4, newStuff);
-
-///////////////////////////////////////////////////////////////////////////////////////////
-
-// COLLECTS FORM DATA AND SENDS TO API
-const newPostSubmit = async (event) => {
-  event.preventDefault();
-  const formData = new FormData(event.target);
-  const newPost = await createPost(API_ENDPOINTS.post, formData);
-  console.log(newPost);
-};
-
-// POST SUBMIT ACTION
-newPostForm.addEventListener("submit", newPostSubmit);
 
 // SINGLE POST TEMPLATE
 const postTemplate = (data) => {
@@ -108,11 +92,17 @@ const postTemplate = (data) => {
     `;
 };
 
-// SHOW POSTS ON WEBSITE LOAD
+const handleAddPost = async (event) => {
+  event.preventDefault();
+  const formData = new FormData(event.target);
+  const newPost = await createPost(API_ENDPOINTS.post, formData);
+};
+
+newPostForm.addEventListener("submit", handleAddPost);
+
 window.onload = async () => {
   const posts = await getData(API_ENDPOINTS.get);
   posts.data.forEach((post) => {
     blog.innerHTML += postTemplate(post);
-    checkUserLogin();
   });
 };

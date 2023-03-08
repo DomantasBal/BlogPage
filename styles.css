@@ -341,7 +341,6 @@ a{
 }
 
 #blog{
-    /* background: lightblue; */
     display: none;
     flex-direction: column;
     align-items: center;
@@ -436,7 +435,12 @@ i:hover{
     border-radius: 12px;
 }
 
-#new-post-form input, #login-form input{
+#post-form{
+    display: none;
+}
+
+
+#post-form input, #login-form input{
     width: 100%;
     padding: 20px;
     margin: 10px 0px;
@@ -445,18 +449,18 @@ i:hover{
     color: var(--secondary-color)
 }
 
-#new-post-form input:focus, #login-form input:focus{
+#post-form input:focus, #login-form input:focus{
     box-shadow:  0 0 0 3px var(--secondary-color);
     outline: 0;
 }
 
-#new-post-form label{
+#post-form label{
     margin-bottom: 10px;
     font-family: var(--lato);
     color:var(--secondary-color)
 }
 
-#new-post-form button, #login-form button {
+#post-form button, #login-form button {
     width: 100%;
 }
 

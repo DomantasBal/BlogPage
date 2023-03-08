@@ -52,18 +52,6 @@ const findUser = (data) => {
 
 loginForm.addEventListener("submit", handleLogin);
 
-function checkUserLogin() {
-  if (localStorage.length > 0) {
-    loginIcon.style.display = "none";
-    logoutIcon.style.display = "block";
-    blog.style.display = "flex";
-  } else {
-    logoutIcon.style.display = "none";
-    recentPosts.display = "none";
-    recentPosts.innerHTML += `<p class="login-to-see-notification"> Please login to see posts. </p>`;
-  }
-}
-
 // LOGIN NOTIFICATIONS
 function successLoginNotification() {
   loginForm.innerHTML = `<p class="success"> Login Successful </p>`;
@@ -80,3 +68,21 @@ logoutIcon.addEventListener("click", () => {
   localStorage.clear();
   location.reload();
 });
+
+function checkUserLogin() {
+  if (localStorage.length > 0) {
+    console.log("logged IN");
+    loginIcon.style.display = "none";
+    logoutIcon.style.display = "block";
+    blog.style.display = "flex";
+    newPostForm.style.display = "block";
+  } else {
+    console.log("logged OUT");
+    logoutIcon.style.display = "none";
+    newPostForm.style.display = "none";
+
+    let notification = `<p class="login-to-see-notification"> Please login to see posts. </p>`;
+    recentPosts.innerHTML = notification;
+  }
+}
+checkUserLogin();

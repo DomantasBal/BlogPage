@@ -71,6 +71,9 @@
           <li class="nav__item">
             <a href="./contact.html" class="nav__link">Contact</a>
           </li>
+          <li class="nav__item">
+            <a href="./register.html" class="nav__link">Register</a>
+          </li>
         </ul>
 
         <div id="close-icon" class="close-icon">
@@ -121,13 +124,13 @@
       <section class="mail">
         <h2>Mind your mailbox for the new posts</h2>
 
-        <form id="subs-form" action="">
+        <!-- <form id="subs-form" action="">
           <div class="input-container">
             <label for="email">Email <sup>*</sup></label>
             <input type="email" name="" id="email" />
             <button type="submit" class="btn btn-subs">Subscribe</button>
           </div>
-        </form>
+        </form> -->
       </section>
 
       <section class="social-icons-section">
@@ -144,57 +147,27 @@
         <p>Mindfulness, Meditation and Everything in Between</p>
       </section>
 
-      <section id="blog">
-        <!-- ============================= NEW POST FORM ================================ -->
-        <div class="post-form-container">
-          <form id="new-post-form" action="">
-            <div>
-              <label for="post-title">Post title: </label>
-              <input type="text" id="post-title" name="title" />
-            </div>
-            <div>
-              <label for="post-title">Post text: </label>
-              <input type="text" id="post-text" name="text" />
-            </div>
-            <div>
-              <label for="post-title">Post Image Url: </label>
-              <input type="text" id="post-img" name="img" />
-            </div>
-            <button id="new-post-btn" class="btn" type="submit">
-              Make New Post
-            </button>
-          </form>
-        </div>
-        <!-- ============================= NEW POST FORM ================================ -->
-
-        <!-- NEW POST FORM END -->
-
-        <!-- SINGLE POST TEMPLATE -->
-
-        <!-- <div class="post">
-          <img src="./assets/post.webp" alt="" />
-          <div class="post-text-content">
-            <h3 class="post-title">App & Down: 5 Apps to Help You Meditate</h3>
-            <p class="post-text">
-              Create a blog post subtitle that sumarizes your post in a few
-            </p>
-            <hr />
-            <div class="post-icons">
-              <div class="left-icons">
-                <i class="fa-regular fa-eye"></i
-                ><span class="stats view-count">0</span>
-                <i class="fa-regular fa-comment"></i
-                ><span class="stats comment-count">0</span>
-              </div>
-              <div class="right-icons">
-                <i class="fa-regular fa-heart"></i>
-              </div>
-            </div>
+      <!-- =============== NEW POST FORM =============== -->
+      <div class="post-form-container">
+        <form id="post-form">
+          <div>
+            <label for="post-title">Post title: </label>
+            <input type="text" id="post-title" name="title" required />
           </div>
-        </div> -->
-
-        <!-- SINGLE POST TEMPLATE END -->
-      </section>
+          <div>
+            <label for="post-title">Post text: </label>
+            <input type="text" id="post-text" name="text" required />
+          </div>
+          <div>
+            <label for="post-title">Post Image Url: </label>
+            <input type="text" id="post-img" name="img" required />
+          </div>
+          <button id="new-post-btn" class="btn" type="submit">
+            Make New Post
+          </button>
+        </form>
+      </div>
+      <section id="blog"></section>
     </main>
   </body>
 </html>
