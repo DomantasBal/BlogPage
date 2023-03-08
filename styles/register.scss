@@ -1,0 +1,50 @@
+body {
+    background: url("../assets/waves.jpeg");
+    background-size: auto;
+    background-repeat: no-repeat;
+  }
+  
+  .register-form-container {
+    margin: 100px 30px;
+    padding: 30px 30px 80px 30px;
+    background: red;
+    background: var(--accent-color);
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+  
+    #register-form {
+      h1 {
+        color: var(--secondary-color);
+        font-family: var(--lato);
+        margin: 30px 0px;
+        text-align: center;
+      }
+  
+      input {
+        width: 100%;
+        padding: 20px;
+        margin: 10px 0px;
+        border: 1px solid var(--secondary-color);
+        transition: box-shadow 0.5s;
+        color: var(--secondary-color);
+  
+        &:focus {
+          box-shadow: 0 0 0 3px var(--secondary-color);
+          outline: 0;
+        }
+      }
+  
+      label {
+        margin-bottom: 10px;
+        font-family: var(--lato);
+        color: var(--secondary-color);
+        font-size: 1.5rem;
+      }
+  
+      button {
+        width: 100%;
+      }
+    }
+  }
+  
