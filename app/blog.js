@@ -21,12 +21,6 @@ const getData = (url) => {
 const createPost = (url, data) => {
   return fetch(url, {
     method: "POST",
-
-    // KODEL SU HEADERIU NEPOSTINA?
-    // headers: { "Content-type": "application/json" },
-
-    // KAIP ZINOTI AR REIKALAUJA HADERIU AR STRINGIFY?
-    // body: JSON.stringify(data),
     body: data,
   })
     .then((response) => response.json())
@@ -63,8 +57,17 @@ const editPost = (id, updatedData) => {
 
 // ====================== NOT SURE HERE ==================
 // OPEN EDIT FIELD
-const updatePost = (event, data) => {
-  editPost(event, data);
+const openEdit = (event, data) => {
+  console.log(event);
+
+  // DATA FOR TESTING
+  let manualData = {
+    title: "Updated Title",
+    text: "Updated Title",
+    img: "https://www.freecodecamp.org/news/content/images/2022/09/jonatan-pie-3l3RwQdHRHg-unsplash.jpg",
+  };
+
+  editPost(event, manualData);
 };
 
 // ====================== NOT SURE HERE ==================
