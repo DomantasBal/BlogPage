@@ -23,6 +23,12 @@ const handleRegister = async (event) => {
   const formData = new FormData(event.target);
   const newUser = await createUser(API_ENDPOINTS.newUser, formData);
   console.log(newUser);
+  successNotification();
+  location.reload();
 };
 
 registerForm.addEventListener("submit", handleRegister);
+
+function successNotification() {
+  registerForm.innerHTML = `<p class="success"> Registration Successful </p>`;
+}
