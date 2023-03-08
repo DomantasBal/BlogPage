@@ -96,6 +96,10 @@ const handleAddPost = async (event) => {
   event.preventDefault();
   const formData = new FormData(event.target);
   const newPost = await createPost(API_ENDPOINTS.post, formData);
+  newPostForm.innerHTML = `<p class="post-success"> POSTED SUCCESFULLY.<br> Window will refresh soon. <p>`;
+  setTimeout(() => {
+    location.reload();
+  }, 2000);
 };
 
 newPostForm.addEventListener("submit", handleAddPost);

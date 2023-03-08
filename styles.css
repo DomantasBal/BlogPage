@@ -509,7 +509,7 @@ i:hover{
     z-index: 1;
   }
 
-  /* NOTIFICATION ON LOGIN */
+  /* NOTIFICATIONS */
 .success{
     color:green;
     font-size: 1.5rem;
@@ -519,5 +519,12 @@ i:hover{
     color: red;
     font-size: 1.5rem;
     padding: 10px;
+}
+.post-success{
+    color:green;
+    font-size: 1.5rem;
+    padding: 10px;
+    font-family:var(--lato);
+    text-align: center;
 }
 
